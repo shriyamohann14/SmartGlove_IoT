@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &92569146 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3173144652706602829, guid: 72433f0dace397647a36634dcbccdb10, type: 3}
+  m_PrefabInstance: {fileID: 971789967}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &153538991 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6000430046758800301, guid: 72433f0dace397647a36634dcbccdb10, type: 3}
@@ -147,11 +152,6 @@ CapsuleCollider:
   m_Height: 0.00650077
   m_Direction: 1
   m_Center: {x: -0.015385063, y: 0.024798132, z: 0.0044375043}
---- !u!4 &203942754 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -2597552504987443188, guid: 72433f0dace397647a36634dcbccdb10, type: 3}
-  m_PrefabInstance: {fileID: 971789967}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,6 +976,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 72433f0dace397647a36634dcbccdb10, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1291939099}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 72433f0dace397647a36634dcbccdb10, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1291939103}
     - targetCorrespondingSourceObject: {fileID: 6000430046758800301, guid: 72433f0dace397647a36634dcbccdb10, type: 3}
       insertIndex: -1
       addedObject: {fileID: 153538993}
@@ -1073,12 +1076,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8cc4bc18ec5a5747b51d3ed2caf7d09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FingerController
-  fingerBone: {fileID: 203942754}
+  fingerBone: {fileID: 92569146}
   receiver: {fileID: 1291939097}
   fingerName: 'Ring '
-  minFlex: 700
-  maxFlex: 960
-  maxAngle: 60
+  minFlex: 950
+  maxFlex: 1500
+  maxAngle: 70
+  smoothSpeed: 12
 --- !u!114 &1291939097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1098,6 +1102,12 @@ MonoBehaviour:
   middle: 0
   ring: 0
   little: 0
+  ax: 0
+  ay: 0
+  az: 0
+  gx: 0
+  gy: 0
+  gz: 0
 --- !u!114 &1291939099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1113,9 +1123,10 @@ MonoBehaviour:
   fingerBone: {fileID: 894453642}
   receiver: {fileID: 1291939097}
   fingerName: Thumb
-  minFlex: 590
-  maxFlex: 720
-  maxAngle: 60
+  minFlex: 205
+  maxFlex: 530
+  maxAngle: 55
+  smoothSpeed: 12
 --- !u!114 &1291939100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1131,9 +1142,10 @@ MonoBehaviour:
   fingerBone: {fileID: 1574351228}
   receiver: {fileID: 1291939097}
   fingerName: Little
-  minFlex: 1050
-  maxFlex: 1950
-  maxAngle: 60
+  minFlex: 106
+  maxFlex: 585
+  maxAngle: 70
+  smoothSpeed: 12
 --- !u!114 &1291939101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1149,9 +1161,10 @@ MonoBehaviour:
   fingerBone: {fileID: 1009828004}
   receiver: {fileID: 1291939097}
   fingerName: Index
-  minFlex: 970
-  maxFlex: 1035
-  maxAngle: 60
+  minFlex: 770
+  maxFlex: 900
+  maxAngle: 70
+  smoothSpeed: 12
 --- !u!114 &1291939102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1167,9 +1180,24 @@ MonoBehaviour:
   fingerBone: {fileID: 1548198717}
   receiver: {fileID: 1291939097}
   fingerName: Middle
-  minFlex: 140
-  maxFlex: 700
-  maxAngle: 60
+  minFlex: 67
+  maxFlex: 130
+  maxAngle: 70
+  smoothSpeed: 12
+--- !u!114 &1291939103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291939091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26e542fae684df64ab66f802f419f48d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HandRotation
+  receiver: {fileID: 1291939097}
+  smoothSpeed: 5
 --- !u!4 &1548198717 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -2518346432509303301, guid: 72433f0dace397647a36634dcbccdb10, type: 3}
