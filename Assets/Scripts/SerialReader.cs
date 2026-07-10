@@ -1,3 +1,6 @@
+
+
+
 using UnityEngine;
 using System;
 using System.IO.Ports;
@@ -15,6 +18,13 @@ public class SerialReader : MonoBehaviour
     public int ring;
     public int little;
 
+    public int ax;
+    public int ay;
+    public int az;
+
+    public int gx;
+    public int gy;
+    public int gz;
     public int ax;
     public int ay;
     public int az;
@@ -58,6 +68,7 @@ public class SerialReader : MonoBehaviour
             // Uncomment ONLY if you want to see every line from Arduino
             // Debug.Log(data);
 
+            string[] values = data.Split(',');
             string[] values = data.Split(',');
 
             if (values.Length != 11)
